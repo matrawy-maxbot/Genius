@@ -1,0 +1,778 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    left: 0;
+    top: 0;
+}
+
+html {
+    overflow-x: hidden;
+}
+
+body {
+    background-color: rgb(87, 91, 95);
+    padding: 200px 0 100px 0;
+    position: relative;
+}
+
+img.page-background {
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -55%) scale(1.1);
+    opacity: .3;
+}
+
+.line-loop {
+    position: absolute;
+    width: 50px;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    opacity: 1;
+    background-color: #e8ebeb;
+    box-shadow: 0 0 100px 108px #e8ebeb;
+    border-radius: 50%;
+    transition: 1s;
+    animation: line_loop 3s ease-in-out 0s infinite forwards;
+}
+
+@keyframes line_loop {
+    0%{
+        transform: translateX(0px);
+    }
+    100%{
+        left: 100%;
+    }
+}
+
+.background-cover {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(227 230 231 / 80%);
+}
+
+.btn-create-parent {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.book-new-tickets {
+    position: relative;
+    width: 250px;
+    height: 250px;
+    background-color: rgb(96 99 103);
+    overflow: hidden;
+    border-radius: 80px;
+    box-shadow: 1px 2px 25px rgb(150 157 160);
+    border: 10px double #595d5f;
+    text-align: center;
+    animation: lighting-ticket 3s ease-in-out 0s infinite alternate forwards;
+    animation-direction: alternate;
+    transition: .7s;
+    cursor: pointer;
+    user-select: none;
+}
+
+img.btn-background {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    left: 0;
+    top: 0;
+    filter: invert(1);
+    opacity: 0.15;
+}
+
+.book-new-tickets span {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    font-family: system-ui;
+    font-size: 26px;
+    font-weight: 600;
+    color: #959ba1;
+}
+
+@keyframes lighting-ticket {
+    0% {
+        opacity: initial;
+    }
+    50% {
+        opacity: .75;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.book-new-tickets:hover {
+    opacity: 1;
+    animation-name: none;
+    transform: scale(1.02) translateY(-5px);
+}
+
+.book-ticket-title {
+    position: relative;
+}
+
+.ticket-details-background {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    min-height: 500px;
+    background-color: rgb(0 0 0 / 50%);
+    display: none;
+    z-index: 5555;
+}
+
+.ticket-details-background.active {
+    display: block;
+}
+
+.ticket-details-parent {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.box-ticket-details {
+    position: relative;
+    width: 500px;
+    height: 250px;
+    background-color: #57595b;
+    border-radius: 15px;
+    padding: 20px;
+}
+
+.box-ticket-details img {
+    opacity: 0.05;
+}
+
+label.form-label {
+    position: relative;
+    margin: 0 auto;
+    display: block;
+    width: 85%;
+    text-indent: 5px;
+    color: #b2b6b9;
+}
+
+select.form-select.form-select-lg {
+    position: relative;
+    width: 85%;
+    margin: 0 auto;
+    margin-top: 10px;
+    margin-bottom: 30px !important;
+    display: block;
+    font-size: 17px;
+    background-color: #d2d2d2;
+}
+
+.create_t_btns {
+    position: relative;
+    margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
+    align-items: center;
+    align-content: center;
+}
+
+.cBTN {
+    position: relative;
+    width: 235px;
+    height: 45px;
+    text-align: center;
+    line-height: 2;
+    font-size: 20px;
+    font-weight: 600;
+    color: aliceblue;
+    border-radius: 7px;
+    opacity: .7;
+    transition: .3s;
+    user-select: none;
+}
+
+.create_btn {
+    background-color: #89a3b8;
+}
+
+.cancel_btn {
+    background-color: #5f6266;
+}
+
+.cBTN:hover {
+    opacity: 1;
+}
+
+.printer_page {
+    display: none !important;
+}
+
+.page-nav {
+    position: absolute;
+    width: 100vw;
+    height: 150px;
+    padding: 25px 40px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    align-items: center;
+    align-content: center;
+}
+
+.page-nav .logo {
+    position: relative;
+    display: flex;
+    height: 100%;
+    width: fit-content;
+    align-content: center;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    gap: 20px;
+    cursor: pointer;
+}
+
+.page-nav img {
+    position: relative;
+    height: 100%;
+    border-radius: 25px;
+    box-shadow: -1px 1px 10px rgb(79 84 89 / 10%);
+}
+
+.page-nav .logo-name {
+    position: relative;
+    text-align: center;
+    font-family: 'Tajawal', sans-serif;
+    text-shadow: 0 0 black;
+}
+
+.page-nav .logo-name .n1{
+    font-size: 21px;
+    color: #028554;
+}
+
+.page-nav .logo-name .n2{
+    color: #9e925b;
+}
+
+.page-nav .logout {
+    position: relative;
+    width: 130px;
+    height: 40px;
+    border-radius: 50px;
+    background-color: #46b08d;
+    border: 5px double #b0cec4;
+    opacity: .8;
+    transition: .4s;
+    cursor: pointer;
+    box-shadow: -1px 1px 10px rgb(79 84 89 / 2%);
+    margin-right: 15px;
+}
+
+.page-nav .logout span {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    color: #e5f1ed;
+    font-family: 'Tajawal', sans-serif;
+    font-weight: 500;
+}
+
+.page-nav .logout:hover {
+    transform: translateY(-1px);
+    opacity: 1;
+    box-shadow: -1px 2px 10px rgb(79 84 89 / 15%);
+}
+
+.patients-info-parent {
+    position: relative;
+    display: flex;
+    left: 0;
+    top: 0;
+    width: 80%;
+    margin: 0 auto;
+    height: fit-content;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0;
+    padding: 0 20px;
+    gap: 20px;
+}
+
+.patients_info {
+    position: relative;
+    display: flex;
+    flex: 1;
+    min-width: 330px;
+    height: 60vh;
+    min-height: 400px;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: flex-start;
+    align-items: center;
+    overflow: hidden;
+    border-radius: 15px;
+    z-index: 55;
+    box-shadow: -1px 1px 10px rgb(64 69 72 / 25%);
+    transform: translateX(-100%);
+    transition: .6s transform;
+    animation: begining_show 2s ease-in-out 0s 1 forwards;
+    opacity: 0;
+}
+
+.patients_info.finished {
+    transform: translateX(100%);
+}
+
+@keyframes begining_show {
+    100%{
+        transform: translateX(0px);
+        opacity: 1;
+    }
+}
+
+.patients_info .content {
+    position: relative;
+    display: flex;
+    flex: 1;
+    height: 100%;
+    background-color: #d8d9d9;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-content: center;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.patients_info.finished .content{
+    border-radius: 0;
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+}
+
+.patients_info .content .head {
+    position: relative;
+    width: 100%;
+    height: 50px;
+    background-color: #f1f1f1;
+    border-top-left-radius: 0;
+    border-top-right-radius: 15px;
+    box-shadow: 0px 4px 10px rgb(69 77 80 / 15%);
+}
+
+.patients_info.finished .content .head {
+    border-top-left-radius: 15px;
+    border-top-right-radius: 0;
+}
+
+.patients_info .content .head > span {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    font-family: 'Tajawal', sans-serif;
+    color: #a5aca9;
+    font-weight: 500;
+}
+
+.patients_info .content .head > span span {
+    color: #038f5b;
+    margin-right: 3px;
+}
+
+.patients_info.finished .content .head > span span {
+    color: #77b2db;
+}
+
+.patients_info .content .footer {
+    position: relative;
+    display: flex;
+    width: 100%;
+    height: 60px;
+    background-color: #f1f1f1;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 15px;
+    box-shadow: 0px -4px 10px rgb(69 77 80 / 15%);
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+}
+
+.patients_info.finished .content .footer {
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 0;
+}
+
+.patients_info .content .footer .status {
+    position: relative;
+    display: flex;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    width: 50%;
+    gap: 5px;
+}
+
+.patients_info .content .footer .status .circle {
+    position: relative;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+}
+
+.patients_info .content .footer .status .circle.purple {
+    background-color: #eb90ee;
+}
+.patients_info .content .footer .status .circle.red {
+    background-color: #ee9090;
+}
+.patients_info .content .footer .status .circle.yellow {
+    background-color: #eecd90;
+}
+.patients_info .content .footer .status .circle.green {
+    background-color: #7fdea6;
+}
+.patients_info .content .footer .status .circle.blue {
+    background-color: #90cbee;
+}
+
+.patients_info .content .footer .status .status-name {
+    position: relative;
+    font-family: 'Tajawal', sans-serif;
+    font-size: 13px;
+}
+
+.patients_info .content .patients-books {
+    position: relative;
+    display: flex;
+    width: 100%;
+    flex: 1;
+    padding: 5px;
+    padding-left: 15px;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 13px;
+    overflow-y: scroll;
+}
+
+.patients_info.finished .content .patients-books {
+    padding: 5px;
+    padding-right: 15px;
+    direction: rtl;
+    gap: 5px;
+}
+
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: rgb(165 167 180 / 80%);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: rgb(145 146 154 / 100%);
+}
+
+::-webkit-scrollbar-track {
+    background-color: rgb(141 141 141 / 0%);
+    border-radius: 0px;
+}
+
+.books-dpt {
+    position: relative;
+    display: flex;
+    width: 100%;
+    height: fit-content;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 5px;
+    direction: ltr;
+}
+
+.patients_info .content .patients-books .patient-book {
+    position: relative;
+    display: flex;
+    width: 100%;
+    height: 47px;
+    border-radius: 13px;
+    background-color: #f2f2f2;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: center;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    font-family: 'Tajawal', sans-serif;
+    font-weight: 600;
+    direction: ltr;
+}
+
+.patients_info.finished .content .patients-books .patient-book {
+    height: 35px;
+}
+
+.patients_info .content .patients-books .patient-book .book-info {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+}
+
+.patients_info .content .patients-books .patient-book .book-type {
+    font-size: 12px;
+    color: #868686;
+    max-width: 110px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    direction: rtl;
+}
+
+.patients_info.finished .content .patients-books .patient-book .date {
+    font-size: 11px;
+    color: #b3b7b9;
+    top: 1px;
+    position: relative;
+}
+
+.patients_info.finished .content .patients-books .patient-book .running {
+    position: relative;
+    height: 38%;
+    width: 20px;
+}
+
+.patients_info.finished .content .patients-books .patient-book .running img {
+    position: absolute;
+    height: 100%;
+    top: 0;
+    left: 0;
+    animation: running_loop 1.5s linear 0s infinite, opacity_loop 1.5s cubic-bezier(0.11, 0.47, 0.94, 0.54) 0s infinite;
+}
+
+@keyframes running_loop {
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(720deg);
+    }
+}
+
+@keyframes opacity_loop {
+    0%{
+        opacity: 1;
+    }
+    50%{
+        opacity: 0.2;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+.patients_info .content .patients-books .patient-book .book-info .circle {
+    position: relative;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+}
+
+.patients_info .content .patients-books .patient-book .book-info .circle.purple {
+    background-color: #e690ee;
+}
+.patients_info .content .patients-books .patient-book .book-info .circle.red {
+    background-color: #ee9090;
+}
+.patients_info .content .patients-books .patient-book .book-info .circle.yellow {
+    background-color: #eecd90;
+}
+.patients_info .content .patients-books .patient-book .book-info .circle.green {
+    background-color: #7fdea6;
+}
+.patients_info .content .patients-books .patient-book .book-info .circle.blue {
+    background-color: #90cbee;
+}
+
+.patients_info .content .patients-books .patient-book .book-info .book-num {
+    position: relative;
+    top: 1px;
+}
+
+.patients_info .content .patients-books .patient-book .book-info .book-num.purple {
+    color: #be5bcb;
+}
+.patients_info .content .patients-books .patient-book .book-info .book-num.red {
+    color: #cb5b5b;
+}
+.patients_info .content .patients-books .patient-book .book-info .book-num.yellow {
+    color: #cbb25b;
+}
+.patients_info .content .patients-books .patient-book .book-info .book-num.green {
+    color: #5bcb69;
+}
+.patients_info .content .patients-books .patient-book .book-info .book-num.blue {
+    color: #5baacb;
+}
+
+.patients_info .content .patients-books .patient-book .delete {
+    font-size: 15px;
+    top: 1px;
+    position: relative;
+    color: #dac7c4;
+    transition: .3s;
+    cursor: pointer;
+}
+
+.patients_info .content .patients-books .patient-book .delete:hover {
+    color: #f47566;
+}
+
+.running_book, .ring_btn_parent {
+    position: relative;
+    display: flex;
+    left: 0;
+    bottom: 0;
+    flex: 1;
+    min-width: 430px;
+    height: 75px;
+    background-color: #459f97;
+    border-radius: 73px;
+    box-shadow: -1px 2px 10px rgb(80 88 99 / 50%);
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: center;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 40px;
+    font-family: 'Tajawal', sans-serif;
+    overflow: hidden;
+    animation: start_show 1s ease-in-out 0.5s 1 forwards;
+    opacity: 0;
+}
+
+.ring_btn_parent {
+    background-color: #d9c581;
+}
+
+@keyframes start_show {
+    0%{
+        opacity: 0;
+        transform: translateY(100px);
+    }
+    100%{
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+
+.running_book-ring_btn {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    margin: 0 auto;
+    padding: 0 20px;
+    gap: 20px 40px;
+    margin-top: 35px;
+}
+
+.running_book img.background, .ring_btn_parent img.background {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    bottom: 0;
+    top: unset;
+    opacity: .05;
+    filter: brightness(0) invert(1);
+    user-select: none;
+}
+
+.ring_btn_parent img.background {
+    filter: invert(0.5);
+}
+
+.running_book .book-info, .ring_btn_parent .ring_btn-info {
+    color: #e5e5e5;
+    font-size: 18px;
+    font-weight: 600;
+    z-index: 1;
+}
+
+.ring_btn_parent .ring_btn-info {
+    color: #757575;
+}
+
+.running_book .book-time, .ring_btn_parent .book-time {
+    color: #ece5c8;
+    font-size: 18px;
+    z-index: 1;
+}
+
+.running_book .book-complete-btn, .ring_btn_parent .ring-btn {
+    position: relative;
+    padding: 5px 23px;
+    background-color: #69b8b1;
+    border-radius: 50px;
+    color: #f2f2f2;
+    user-select: none;
+    cursor: pointer;
+    transition: .25s;
+    z-index: 2;
+}
+
+.ring_btn_parent .ring-btn {
+    background-color: #6b6a62;
+    border-radius: 50px;
+    color: #f2f2f2;
+}
+
+.running_book .book-complete-btn:hover {
+    background-color: #f2f2f2;
+    color: #69b8b1;
+}
+
+.ring_btn_parent .ring-btn:hover {
+    background-color: #f2f2f2;
+    color: #b09c58;
+}

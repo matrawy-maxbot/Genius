@@ -1,0 +1,334 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    left: 0;
+    top: 0;
+}
+
+html {
+    overflow-x: hidden;
+}
+
+body {
+    background-color: rgb(87, 91, 95);
+    padding: 200px 0 50px 0;
+    position: relative;
+    min-height: 100vh;
+}
+
+img.page-background {
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -55%) scale(1.1);
+    opacity: .3;
+}
+
+.line-loop {
+    position: absolute;
+    width: 50px;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    opacity: 1;
+    background-color: #e8ebeb;
+    box-shadow: 0 0 100px 108px #e8ebeb;
+    border-radius: 50%;
+    transition: 1s;
+    animation: line_loop 3s ease-in-out 0s infinite forwards;
+}
+
+@keyframes line_loop {
+    0%{
+        transform: translateX(0px);
+    }
+    100%{
+        left: 100%;
+    }
+}
+
+.background-cover {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(227 230 231 / 80%);
+}
+
+.page-nav {
+    position: absolute;
+    width: 100vw;
+    height: 150px;
+    padding: 25px 40px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    align-items: center;
+    align-content: center;
+}
+
+.page-nav .nav-line {
+    position: absolute;
+    top: 0;
+    width: 100vw;
+    height: 100%;
+}
+
+.page-nav .nav-line img {
+    position: relative;
+    left: 0;
+    width: 100%;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.page-nav .nav-line .shine {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    height: 100%;
+    width: 0px;
+    background-color: #e8ebeb;
+    box-shadow: 0 0 100px 85px #e8ebeb;
+    transform: translateX(-108px) translateY(-50%);
+    animation: shine_loop 6s ease-in-out 1s infinite forwards;
+}
+
+@keyframes shine_loop {
+    0% {
+        transform: translateX(-108px);
+    }
+    40% {
+        transform: translateX(107vw);
+    }
+    100% {
+        transform: translateX(107vw);
+    }
+}
+
+.page-nav .logo {
+    position: relative;
+    display: flex;
+    height: 100%;
+    width: fit-content;
+    align-content: center;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    gap: 20px;
+    cursor: pointer;
+}
+
+.page-nav .logo img {
+    position: relative;
+    height: 100%;
+    border-radius: 35px;
+    border: 5px solid #67bb9f;
+    border-style: inset;
+    box-sizing: content-box;
+}
+
+.page-nav .logo-name {
+    position: relative;
+    text-align: center;
+    font-family: 'Tajawal', sans-serif;
+    text-shadow: 0 0 black;
+}
+
+.page-nav .logo-name .n1{
+    font-size: 21px;
+    color: #028554;
+}
+
+.page-nav .logo-name .n2{
+    color: #9e925b;
+}
+
+.page-nav .login {
+    position: absolute;
+    width: 130px;
+    height: 14px;
+    border-radius: 50px;
+    background-color: #46b08d;
+    border: 5px double #b0cec4;
+    opacity: .95;
+    transition: .3s;
+    cursor: pointer;
+    box-shadow: -1px 1px 10px rgb(79 84 89 / 2%);
+    margin-right: 15px;
+    right: 50px;
+    left: unset;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #e5f1ed;
+    color: transparent;
+}
+
+.page-nav .login span {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    color: inherit;
+    font-family: 'Tajawal', sans-serif;
+    font-weight: 500;
+}
+
+.page-nav .login:hover {
+    transform: translateY(-55%);
+    height: 40px;
+    opacity: 1;
+    box-shadow: -1px 2px 10px
+    rgb(79 84 89 / 15%);
+    color: #e5f1ed;
+}
+
+.welcome-text {
+    position: relative;
+    margin: 0 auto;
+    width: fit-content;
+    font-family: 'Tajawal', sans-serif;
+    font-size: 55px;
+    font-weight: 600;
+    color: #717988;
+}
+
+.welcome-text span.a {
+    color: #70b993;
+    text-shadow: 0 0 2px #70b993;
+    animation: opacity-text 7s ease-in-out 1s infinite forwards;
+}
+
+.welcome-text span.b {
+    text-shadow: 0 0 2px #717988;
+    animation: opacity-text 7s ease-in-out 1s infinite forwards;
+    animation-delay: 1.2s;
+}
+
+.welcome-text span.c {
+    color: #bbae6b;
+    text-shadow: 0 0 2px #bbae6b;
+    animation: opacity-text 7s ease-in-out 1s infinite forwards;
+    animation-delay: 1.4s;
+}
+
+@keyframes opacity-text {
+    0% {
+        opacity: 1;
+    }
+    20%{
+        opacity: 0;
+    }
+    40%{
+        opacity: 1;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.waiting-cards {
+    position: relative;
+    width: 75%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    gap: 50px;
+    margin-top: 50px;
+}
+
+.waiting-cards .waiting-card {
+    position: relative;
+    display: flex;
+    width: 250px;
+    height: 250px;
+    background-color: #f7f7f7;
+    box-shadow: -1px 1px 10px rgb(121 126 138 / 50%);
+    border-radius: 15px;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-content: center;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    font-family: 'Tajawal', sans-serif;
+}
+
+.waiting-card .header {
+    font-size: 22px;
+    color: #607d8b;
+    font-weight: 600;
+}
+
+.waiting-card .number {
+    font-size: 100px;
+    font-weight: 500;
+    color: #c9b85f;
+}
+
+.waiting-card .footer {
+    color: #9fa9ae;
+    font-weight: 500;
+}
+
+.form {
+    position: relative;
+    width: 95%;
+    max-width: 500px;
+    margin: auto;
+    background-color: #f2f3f4;
+    margin-top: 100px;
+    padding: 50px;
+    padding-bottom: 25px;
+    border-radius: 20px;
+    box-shadow: -1px 1px 15px #585e6633;
+    overflow: hidden;
+}
+
+.form img {
+    position: absolute;
+    right: 0;
+    left: unset;
+    bottom: 0;
+    top: unset;
+    width: 150%;
+    filter: brightness(0);
+    opacity: .02;
+}
+
+.form .mb-3 {
+    position: relative;
+}
+
+.login-btn {
+    position: relative;
+    width: 115px;
+    height: 37px;
+    background-color: #90c9b6;
+    border-radius: 20px;
+    margin: 0 auto;
+    margin-top: 35px;
+    cursor: pointer;
+    user-select: none;
+    transition: .25s;
+}
+
+.login-btn span {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff6ea;
+    font-family: 'tajawal', sans-serif;
+}
+
+.login-btn:hover {
+    background-color: #67bb9f;
+}

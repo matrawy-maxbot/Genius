@@ -1,0 +1,42 @@
+[
+	{
+		"username" : "mexam",
+		"password" : "11111",
+		"depart_name" : "male exam"
+	},
+	{
+		"username" : "fexam",
+		"password" : "22222",
+		"depart_name" : "female exam"
+	},
+	{
+		"username" : "mobserv",
+		"password" : "33333",
+		"depart_name" : "male observ"
+	},
+	{
+		"username" : "fobserv",
+		"password" : "44444",
+		"depart_name" : "female observ"
+	},
+	{
+		"username" : "trauma",
+		"password" : "55555",
+		"depart_name" : "trauma"
+	},
+	{
+		"username" : "orthopedic",
+		"password" : "66666",
+		"depart_name" : "orthopedic"
+	},
+	{
+		"username" : "children",
+		"password" : "77777",
+		"depart_name" : "children"
+	},
+	{
+		"username" : "security",
+		"password" : "88888",
+		"depart_name" : "security"
+	}
+]
